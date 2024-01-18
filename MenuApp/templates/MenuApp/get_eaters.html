@@ -1,0 +1,27 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+{% for eater_element in eaters %}
+<div>
+<img src="{{ eater_element.image.url }}">
+</div>
+
+<div>
+eater name - {{ eater_element.name }}<br/>
+eater description - {{ eater_element.description }}<br/>
+eater price - {{ eater_element.price }}<br/>
+eater menu type - {{ eater_element.menu_type.menu_type_food }}<br/>
+eater creator - {{ eater_element.creator}}<br/>
+
+<div>
+<form action={% url 'update_eater' eater_element.id %} method="GET"><input type="submit" value="Update" /></form>
+<form action={% url 'delete_eater' eater_element.id %} method="GET"><input type="submit" value="Delete" /></form>
+
+
+</div>
+{{ eater.id }} - {{ eater.updater }} - updater
+
+{% endfor %}
+<a href="{% url 'create_eater' %}">create eater</a>
+
+{% endblock content %}

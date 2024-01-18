@@ -1,0 +1,24 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+{% for menu in menus  %}
+<div>
+<img src="{{ menu.menu_image.url }}">
+</div>
+
+<div>
+Menu creator - {{ menu.menu_creator }}<br/>
+Menu title - {{ menu.menu_title }}<br/>
+Menu type - {{ menu.menu_type_food }}<br/>
+</div>
+
+<div>
+<a href="{% url 'update_menu' menu.id %}">Update menu</a><br/>
+<a href="{% url 'delete_menu' menu.id %}">Delete menu</a><br/>
+
+
+</div>
+{% endfor %}
+<a href="{% url 'create_menu' %}">Add  menu</a>
+
+{% endblock content %}

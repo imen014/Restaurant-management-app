@@ -1,0 +1,13 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+{{ message }}
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form_user.as_p }}
+<input type="submit" />
+</form>
+<a href="{% url 'show_my_account' user_instance.id %}">show my account</a>
+
+{% endblock content %}

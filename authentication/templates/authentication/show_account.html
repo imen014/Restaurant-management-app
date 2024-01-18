@@ -1,0 +1,23 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+<h2> your profile</h2>
+<ul>
+<div>
+<img src="{{ user.image.url }}">
+<div>
+<div><br/>
+{{ user.username }}<br/>
+{{ user.whatsapp_number }}<br/>
+{{ user.email }}
+<div><br/>
+<div>
+ 
+</div>
+</ul>
+<a href="{% url 'update_user' user.id %}">Update account</a><br/>
+<a href="{% url 'detele_my_account' user.id %}">Delete my account</a>
+
+
+
+{% endblock content %}

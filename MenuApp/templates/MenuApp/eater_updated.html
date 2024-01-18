@@ -1,0 +1,10 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+{{ message }}
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{ eater_form.as_p }}
+<input type="submit" />
+</form>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+<h2> user informations </h2>
+<ul>
+{% for user in users %}
+<div>
+<img src="{{ user.image.url }}">
+<div>
+<div>
+{{ user.username }}
+{{ user.whatsapp_number }}
+{{ user.email }}
+<div>
+<div>
+ 
+</div>
+{% endfor %}
+</ul>
+<button type="submit"><a href="{% url 'delete_users' %}">delete users</a></button>
+
+{% endblock content %}

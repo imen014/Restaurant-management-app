@@ -1,0 +1,18 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+<div>
+<img src="{{ eater_instance.image.url }}">
+</div>
+<div>
+eater name - {{ eater_instance.name }}<br/>
+eater description - {{ eater_instance.description }}<br/>
+eater price - {{ eater_instance.price }}<br/>
+eater menu type - {{ eater_instance.menu_type.menu_type_food }}<br/>
+eater creator - {{ eater_instance.creator}}<br/>
+
+<a href="{% url 'update_eater' eater_instance.id %}">Update eater</a>
+<a href="{% url 'delete_eater' eater_instance.id %}">Update eater</a>
+
+
+{% endblock content %}

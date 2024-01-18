@@ -1,0 +1,15 @@
+{% extends "command_food_app/base.html" %}
+
+{% block content %}
+{% for command in commands %}
+command_identiant - {{ command.command_identiant }} <br/>
+command_client_name - {{ command.command_client_name }}<br/>
+command_client_phone_number - {{ command.command_client_phone_number }}<br/>
+place_of_delivery  - {{ command.place_of_delivery }}<br/>
+command_status  - {{ command.command_status }}<br/>
+creator  - {{ command.creator }}<br/>
+{% endfor %}<br/>
+
+
+
+{% endblock content %}
